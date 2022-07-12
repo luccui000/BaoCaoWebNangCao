@@ -44,6 +44,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,6 +69,65 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.deleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.indexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.JsonResponseOfBoolean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.JsonResponseOfListOfHinhAnh.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.JsonResponseOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.storeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.updateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.uploadFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\serviceHinhAnh\HinhAnhService.disco" />
+    <None Include="Connected Services\serviceHinhAnh\configuration91.svcinfo" />
+    <None Include="Connected Services\serviceHinhAnh\configuration.svcinfo" />
+    <None Include="Connected Services\serviceHinhAnh\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Resources\admin\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Resources\admin\css\bootstrap.min.css" />
+    <Content Include="Resources\admin\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Resources\admin\css\font-awesome.min.css" />
+    <Content Include="Resources\admin\css\fullcalendar.min.css" />
+    <Content Include="Resources\admin\css\select2.min.css" />
+    <Content Include="Resources\admin\css\style.css" />
+    <Content Include="Resources\admin\css\tagsinput.css" />
+    <Content Include="Resources\admin\fonts\fontawesome-webfont3e6e.html" />
+    <Content Include="Resources\admin\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="Resources\admin\img\icon-256x256.png" />
+    <Content Include="Resources\admin\img\logo.png" />
+    <Content Include="Resources\admin\js\app.js" />
+    <Content Include="Resources\admin\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Resources\admin\js\bootstrap.min.js" />
+    <Content Include="Resources\admin\js\Chart.bundle.js" />
+    <Content Include="Resources\admin\js\chart.js" />
+    <Content Include="Resources\admin\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Resources\admin\js\fullcalendar.min.js" />
+    <Content Include="Resources\admin\js\jquery-3.2.1.min.js" />
+    <Content Include="Resources\admin\js\jquery-ui.min.html" />
+    <Content Include="Resources\admin\js\jquery.dataTables.min.js" />
+    <Content Include="Resources\admin\js\jquery.fullcalendar.js" />
+    <Content Include="Resources\admin\js\jquery.slimscroll.js" />
+    <Content Include="Resources\admin\js\moment.min.js" />
+    <Content Include="Resources\admin\js\popper.min.js" />
+    <Content Include="Resources\admin\js\select2.min.js" />
+    <Content Include="Resources\admin\js\tagsinput.js" />
     <Content Include="Resources\css\bootstrap.min.css" />
     <Content Include="Resources\css\dashboard.css" />
     <Content Include="Resources\css\default.css" />
@@ -283,14 +344,28 @@
     <Content Include="Default.aspx" />
     <Content Include="ChiTietBaiViet.aspx" />
     <Content Include="Tags.aspx" />
+    <Content Include="Admin\TrangChu.aspx" />
+    <Content Include="Admin\HinhAnh\Index.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
     <Compile Include="App.Master.cs">
       <DependentUpon>App.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="App.Master.designer.cs">
       <DependentUpon>App.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\serviceHinhAnh\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Default.aspx.cs">
@@ -314,9 +389,28 @@
     <Compile Include="Tags.aspx.designer.cs">
       <DependentUpon>Tags.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\TrangChu.aspx.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TrangChu.aspx.designer.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HinhAnh\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HinhAnh\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\BaseUIPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.Master" />
+    <Content Include="Admin.Master" />
+    <None Include="Connected Services\serviceHinhAnh\HinhAnhService.wsdl" />
     <None Include="packages.config" />
     <Content Include="Resources\fonts\fontawesome-webfont93e393e3.eot" />
     <Content Include="Resources\fonts\fontawesome-webfont93e393e3.html.readme" />
@@ -329,6 +423,10 @@
     <Content Include="Resources\fonts\iconsmindd41d.eot" />
     <Content Include="Resources\fonts\Simple-Line-Iconsc05f.ttf" />
     <Content Include="Resources\fonts\Simple-Line-Iconsc05f.woff" />
+    <Content Include="Resources\admin\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="Resources\admin\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="Resources\admin\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="Resources\admin\fonts\fontawesome-webfontd41d.eot" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -336,7 +434,15 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\admin\plugins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\serviceHinhAnh\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

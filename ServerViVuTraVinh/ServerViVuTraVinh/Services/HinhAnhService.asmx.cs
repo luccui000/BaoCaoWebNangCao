@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -53,6 +54,33 @@ namespace ServerViVuTraVinh.Services
                     StatusCode = 200
                 };
             } 
+        }
+        [WebMethod]
+        public JsonResponse<String>uploadFile(byte[] f, string fileName)
+        {
+            try
+            {
+                MemoryStream ms = new MemoryStream(f);
+                FileStream fs = new FileStream(System.Web.Hosting.HostingEnvironment.MapPath("~/Resources/Upload/") + Hash.make(fileName), FileMode.Create);
+                ms.WriteTo(fs);
+                ms.Close();
+                fs.Close();
+                fs.Dispose();
+                return new JsonResponse<string>()
+                {
+                    Error = false,
+                    Message = "Upload thành công",
+                    Data = fs.Name
+                };
+            } catch(Exception ex)
+            {
+                return new JsonResponse<string>()
+                {
+                    Error = true,
+                    Message = "Upload không thành công",
+                    Data = ex.Message
+                };
+            }
         }
         [WebMethod]
         public JsonResponse<bool> update(int Id, string DuongDan, int NguoiTao, string NgayTao = null)
