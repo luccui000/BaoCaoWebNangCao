@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="App.master.cs" Inherits="ClientViVuTraVinh.App" %>
+
+<!DOCTYPE html> 
+<html>
+<head runat="server"> 
+    <link href="Resources/css/bootstrap.min.css" rel="stylesheet" /> 
+    <link href="Resources/css/default.css" rel="stylesheet" />
+    <link href="Resources/css/style.css" rel="stylesheet" />
+    <link href="Resources/css/plugin.css" rel="stylesheet" />
+    <link href="Resources/css/font-awesome.css" rel="stylesheet" /> 
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form" runat="server">   
+        <asp:ContentPlaceHolder ID="content" runat="server"></asp:ContentPlaceHolder> 
+    </form>
+    <script src="Resources/js/jquery-3.2.1.min.js"></script>
+    <script src="Resources/js/plugin.js"></script>
+    <script src="Resources/js/custom-nav.js"></script>
+    <script src="Resources/js/main.js"></script> 
+    <asp:ContentPlaceHolder ID="script" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>

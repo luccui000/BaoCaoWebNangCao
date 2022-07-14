@@ -1,0 +1,588 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3193B663-18FC-492A-98D8-81B25108A817}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClientViVuTraVinh</RootNamespace>
+    <AssemblyName>ClientViVuTraVinh</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Connected Services\serviceDanhMuc\ClientViVuTraVinh.serviceDanhMuc.deleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceDanhMuc\ClientViVuTraVinh.serviceDanhMuc.indexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceDanhMuc\ClientViVuTraVinh.serviceDanhMuc.JsonResponseOfBoolean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceDanhMuc\ClientViVuTraVinh.serviceDanhMuc.JsonResponseOfListOfDanhMuc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceDanhMuc\ClientViVuTraVinh.serviceDanhMuc.JsonResponseOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceDanhMuc\ClientViVuTraVinh.serviceDanhMuc.storeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceDanhMuc\ClientViVuTraVinh.serviceDanhMuc.updateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="DiaDiem\DanhSachDiaDiem.aspx" />
+    <None Include="Connected Services\serviceDanhMuc\DanhMucService.disco" />
+    <None Include="Connected Services\serviceDanhMuc\configuration91.svcinfo" />
+    <None Include="Connected Services\serviceDanhMuc\configuration.svcinfo" />
+    <None Include="Connected Services\serviceDanhMuc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\serviceDiaDiem\ClientViVuTraVinh.serviceDiaDiem.deleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceDiaDiem\ClientViVuTraVinh.serviceDiaDiem.indexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceDiaDiem\ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfBoolean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceDiaDiem\ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfListOfDiaDiem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceDiaDiem\ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceDiaDiem\ClientViVuTraVinh.serviceDiaDiem.storeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceDiaDiem\ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceDiaDiem\ClientViVuTraVinh.serviceDiaDiem.updateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Admin\DiaDiem\Create.aspx" />
+    <None Include="Connected Services\serviceDanhMuc\DanhMucService.wsdl" />
+    <Content Include="Connected Services\serviceDiaDiem\ClientViVuTraVinh.serviceDiaDiem.indexJsonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\serviceDiaDiem\DiaDiemService.disco" />
+    <None Include="Connected Services\serviceDiaDiem\configuration91.svcinfo" />
+    <None Include="Connected Services\serviceDiaDiem\configuration.svcinfo" />
+    <None Include="Connected Services\serviceDiaDiem\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.deleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.indexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.JsonResponseOfBoolean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.JsonResponseOfListOfHinhAnh.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.JsonResponseOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.storeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.updateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceHinhAnh\ClientViVuTraVinh.serviceHinhAnh.uploadFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Admin\DiaDiem\Index.aspx" />
+    <None Include="Connected Services\serviceDiaDiem\DiaDiemService.wsdl" />
+    <None Include="Connected Services\serviceHinhAnh\HinhAnhService.disco" />
+    <None Include="Connected Services\serviceHinhAnh\configuration91.svcinfo" />
+    <None Include="Connected Services\serviceHinhAnh\configuration.svcinfo" />
+    <None Include="Connected Services\serviceHinhAnh\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Global.asax" />
+    <Content Include="Resources\admin\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Resources\admin\css\bootstrap.min.css" />
+    <Content Include="Resources\admin\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Resources\admin\css\font-awesome.min.css" />
+    <Content Include="Resources\admin\css\fullcalendar.min.css" />
+    <Content Include="Resources\admin\css\select2.min.css" />
+    <Content Include="Resources\admin\css\style.css" />
+    <Content Include="Resources\admin\css\tagsinput.css" />
+    <Content Include="Resources\admin\fonts\fontawesome-webfont3e6e.html" />
+    <Content Include="Resources\admin\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="Resources\admin\img\icon-256x256.png" />
+    <Content Include="Resources\admin\img\logo.png" />
+    <Content Include="Resources\admin\js\app.js" />
+    <Content Include="Resources\admin\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Resources\admin\js\bootstrap.min.js" />
+    <Content Include="Resources\admin\js\Chart.bundle.js" />
+    <Content Include="Resources\admin\js\chart.js" />
+    <Content Include="Resources\admin\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Resources\admin\js\fullcalendar.min.js" />
+    <Content Include="Resources\admin\js\jquery-3.2.1.min.js" />
+    <Content Include="Resources\admin\js\jquery-ui.min.html" />
+    <Content Include="Resources\admin\js\jquery.dataTables.min.js" />
+    <Content Include="Resources\admin\js\jquery.fullcalendar.js" />
+    <Content Include="Resources\admin\js\jquery.slimscroll.js" />
+    <Content Include="Resources\admin\js\moment.min.js" />
+    <Content Include="Resources\admin\js\popper.min.js" />
+    <Content Include="Resources\admin\js\select2.min.js" />
+    <Content Include="Resources\admin\js\tagsinput.js" />
+    <Content Include="Resources\css\bootstrap.min.css" />
+    <Content Include="Resources\css\dashboard.css" />
+    <Content Include="Resources\css\default.css" />
+    <Content Include="Resources\css\font-awesome.css" />
+    <Content Include="Resources\css\icons.css" />
+    <Content Include="Resources\css\mag-fashion.css" />
+    <Content Include="Resources\css\mag-fitness.css" />
+    <Content Include="Resources\css\mag-food.css" />
+    <Content Include="Resources\css\mag-photo.css" />
+    <Content Include="Resources\css\mag-sports.css" />
+    <Content Include="Resources\css\mag-tech.css" />
+    <Content Include="Resources\css\mag-travel.css" />
+    <Content Include="Resources\css\mag.css" />
+    <Content Include="Resources\css\plugin.css" />
+    <Content Include="Resources\css\style.css" />
+    <Content Include="Resources\fonts\fontawesome-webfont5b62-2.html" />
+    <Content Include="Resources\fonts\fontawesome-webfont5b62-3.html" />
+    <Content Include="Resources\fonts\fontawesome-webfont5b62-4.html" />
+    <Content Include="Resources\fonts\fontawesome-webfont5b62-5.html" />
+    <Content Include="Resources\fonts\fontawesome-webfont5b62.html" />
+    <Content Include="Resources\fonts\fontawesome-webfont93e393e3.html" />
+    <Content Include="Resources\fonts\fontawesome-webfont93e393e3.svg" />
+    <Content Include="Resources\fonts\fontawesome-webfontd41d.html" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular-5.html" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regulard41dd41d.html" />
+    <Content Include="Resources\fonts\iconsmindca27.svg" />
+    <Content Include="Resources\fonts\simple-line-iconsc05f-2.html" />
+    <Content Include="Resources\fonts\simple-line-iconsc05f.html" />
+    <Content Include="Resources\font\flaticon.html" />
+    <Content Include="Resources\images\about-bg.jpg" />
+    <Content Include="Resources\images\ads.jpg" />
+    <Content Include="Resources\images\blog-listing\ablog_13.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_01.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_02.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_03.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_04.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_05.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_06.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_07.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_08.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_09.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_10.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_101.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_102.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_103.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_13.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_14.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_15.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_16.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_17.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_18.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_19.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_20.jpg" />
+    <Content Include="Resources\images\blog-listing\blog_21.jpg" />
+    <Content Include="Resources\images\blog\author.png" />
+    <Content Include="Resources\images\blog\cmnt-1.jpg" />
+    <Content Include="Resources\images\blog\cmnt-2.jpg" />
+    <Content Include="Resources\images\blog\cmnt-3.jpg" />
+    <Content Include="Resources\images\blog\r-post-1.jpg" />
+    <Content Include="Resources\images\blog\r-post-2.jpg" />
+    <Content Include="Resources\images\blog\r-post-3.jpg" />
+    <Content Include="Resources\images\blog\signature.png" />
+    <Content Include="Resources\images\body1.png" />
+    <Content Include="Resources\images\comment.jpg" />
+    <Content Include="Resources\images\fashion\blog_01.jpg" />
+    <Content Include="Resources\images\fashion\blog_02.jpg" />
+    <Content Include="Resources\images\fashion\blog_03.jpg" />
+    <Content Include="Resources\images\fashion\blog_04.jpg" />
+    <Content Include="Resources\images\fashion\blog_05.jpg" />
+    <Content Include="Resources\images\fashion\blog_06.jpg" />
+    <Content Include="Resources\images\fashion\blog_07.jpg" />
+    <Content Include="Resources\images\fashion\blog_08.jpg" />
+    <Content Include="Resources\images\fashion\blog_09.jpg" />
+    <Content Include="Resources\images\fashion\blog_10.jpg" />
+    <Content Include="Resources\images\fashion\blog_11.jpg" />
+    <Content Include="Resources\images\favicon.png" />
+    <Content Include="Resources\images\fitness\blog_04.jpg" />
+    <Content Include="Resources\images\fitness\blog_07.jpg" />
+    <Content Include="Resources\images\fitness\blog_08.jpg" />
+    <Content Include="Resources\images\fitness\blog_09.jpg" />
+    <Content Include="Resources\images\fitness\blog_10.jpg" />
+    <Content Include="Resources\images\fitness\blog_11.jpg" />
+    <Content Include="Resources\images\fitness\blog_12.jpg" />
+    <Content Include="Resources\images\fitness\blog_16.jpg" />
+    <Content Include="Resources\images\fitness\blog_17.jpg" />
+    <Content Include="Resources\images\fitness\blog_18.jpg" />
+    <Content Include="Resources\images\foods\blog_01.jpg" />
+    <Content Include="Resources\images\foods\blog_02.jpg" />
+    <Content Include="Resources\images\foods\blog_03.jpg" />
+    <Content Include="Resources\images\foods\blog_06.jpg" />
+    <Content Include="Resources\images\foods\blog_07.jpg" />
+    <Content Include="Resources\images\foods\blog_08.jpg" />
+    <Content Include="Resources\images\foods\blog_09.jpg" />
+    <Content Include="Resources\images\foods\blog_10.jpg" />
+    <Content Include="Resources\images\foods\blog_13.jpg" />
+    <Content Include="Resources\images\foods\blog_14.jpg" />
+    <Content Include="Resources\images\foods\blog_15.jpg" />
+    <Content Include="Resources\images\foods\blog_16.jpg" />
+    <Content Include="Resources\images\foods\blog_17.jpg" />
+    <Content Include="Resources\images\foods\blog_18.jpg" />
+    <Content Include="Resources\images\foods\blog_19.jpg" />
+    <Content Include="Resources\images\foods\blog_20.jpg" />
+    <Content Include="Resources\images\foods\blog_21.jpg" />
+    <Content Include="Resources\images\img-about.jpg" />
+    <Content Include="Resources\images\img-about1.jpg" />
+    <Content Include="Resources\images\insta\insta_01.jpg" />
+    <Content Include="Resources\images\insta\insta_02.jpg" />
+    <Content Include="Resources\images\insta\insta_03.jpg" />
+    <Content Include="Resources\images\insta\insta_04.jpg" />
+    <Content Include="Resources\images\insta\insta_05.jpg" />
+    <Content Include="Resources\images\insta\insta_06.jpg" />
+    <Content Include="Resources\images\insta\insta_07.jpg" />
+    <Content Include="Resources\images\insta\insta_08.jpg" />
+    <Content Include="Resources\images\insta\insta_09.jpg" />
+    <Content Include="Resources\images\insta\insta_10.jpg" />
+    <Content Include="Resources\images\insta\insta_11.jpg" />
+    <Content Include="Resources\images\insta\insta_12.jpg" />
+    <Content Include="Resources\images\loader.gif" />
+    <Content Include="Resources\images\logo.png" />
+    <Content Include="Resources\images\pagebanner.jpg" />
+    <Content Include="Resources\images\photo\blog_012.jpg" />
+    <Content Include="Resources\images\photo\blog_07.jpg" />
+    <Content Include="Resources\images\photo\blog_08.jpg" />
+    <Content Include="Resources\images\photo\blog_09.jpg" />
+    <Content Include="Resources\images\photo\blog_10.jpg" />
+    <Content Include="Resources\images\photo\blog_11.jpg" />
+    <Content Include="Resources\images\photo\blog_12.jpg" />
+    <Content Include="Resources\images\shop1.jpg" />
+    <Content Include="Resources\images\shop2.jpg" />
+    <Content Include="Resources\images\shop3.jpg" />
+    <Content Include="Resources\images\shop4.jpg" />
+    <Content Include="Resources\images\shop5.jpg" />
+    <Content Include="Resources\images\shop6.jpg" />
+    <Content Include="Resources\images\shop7.jpg" />
+    <Content Include="Resources\images\shop8.jpg" />
+    <Content Include="Resources\images\slider\bg1.jpg" />
+    <Content Include="Resources\images\slider\bg10.jpg" />
+    <Content Include="Resources\images\slider\bg2.jpg" />
+    <Content Include="Resources\images\slider\bg3.jpg" />
+    <Content Include="Resources\images\slider\bg4.jpg" />
+    <Content Include="Resources\images\slider\bg5.jpg" />
+    <Content Include="Resources\images\slider\bg7.jpg" />
+    <Content Include="Resources\images\slider\bg8.jpg" />
+    <Content Include="Resources\images\slider\bg9.jpg" />
+    <Content Include="Resources\images\sports\blog_01.jpg" />
+    <Content Include="Resources\images\sports\blog_02.jpg" />
+    <Content Include="Resources\images\sports\blog_03.jpg" />
+    <Content Include="Resources\images\sports\blog_04.jpg" />
+    <Content Include="Resources\images\sports\blog_05.jpg" />
+    <Content Include="Resources\images\sports\blog_06.jpg" />
+    <Content Include="Resources\images\sports\blog_07.jpg" />
+    <Content Include="Resources\images\sports\blog_08.jpg" />
+    <Content Include="Resources\images\sports\blog_09.jpg" />
+    <Content Include="Resources\images\sports\blog_10.jpg" />
+    <Content Include="Resources\images\sports\blog_11.jpg" />
+    <Content Include="Resources\images\sports\blog_12.jpg" />
+    <Content Include="Resources\images\sports\blog_131.jpg" />
+    <Content Include="Resources\images\sports\blog_1310.jpg" />
+    <Content Include="Resources\images\sports\blog_132.jpg" />
+    <Content Include="Resources\images\sports\blog_133.jpg" />
+    <Content Include="Resources\images\sports\blog_134.jpg" />
+    <Content Include="Resources\images\sports\blog_135.jpg" />
+    <Content Include="Resources\images\sports\blog_136.jpg" />
+    <Content Include="Resources\images\sports\blog_137.jpg" />
+    <Content Include="Resources\images\sports\blog_138.jpg" />
+    <Content Include="Resources\images\sports\blog_139.jpg" />
+    <Content Include="Resources\images\tech\blog_01.jpg" />
+    <Content Include="Resources\images\tech\blog_02.jpg" />
+    <Content Include="Resources\images\tech\blog_07.jpg" />
+    <Content Include="Resources\images\tech\blog_08.jpg" />
+    <Content Include="Resources\images\tech\blog_09.jpg" />
+    <Content Include="Resources\images\tech\blog_10.jpg" />
+    <Content Include="Resources\images\tech\blog_11.jpg" />
+    <Content Include="Resources\images\tech\blog_12.jpg" />
+    <Content Include="Resources\images\tech\blog_13.jpg" />
+    <Content Include="Resources\images\tech\blog_14.jpg" />
+    <Content Include="Resources\images\tech\blog_15.jpg" />
+    <Content Include="Resources\images\tech\blog_16.jpg" />
+    <Content Include="Resources\images\tech\blog_17.jpg" />
+    <Content Include="Resources\images\tech\blog_18.jpg" />
+    <Content Include="Resources\images\tech\blog_19.jpg" />
+    <Content Include="Resources\images\tech\blog_20.jpg" />
+    <Content Include="Resources\images\tech\blog_21.jpg" />
+    <Content Include="Resources\images\travel\blog_01.jpg" />
+    <Content Include="Resources\images\travel\blog_02.jpg" />
+    <Content Include="Resources\images\travel\blog_04.jpg" />
+    <Content Include="Resources\images\travel\blog_08.jpg" />
+    <Content Include="Resources\images\travel\blog_09.jpg" />
+    <Content Include="Resources\images\travel\blog_10.jpg" />
+    <Content Include="Resources\images\travel\blog_11.jpg" />
+    <Content Include="Resources\images\travel\blog_12.jpg" />
+    <Content Include="Resources\images\travel\blog_14.jpg" />
+    <Content Include="Resources\images\travel\blog_15.jpg" />
+    <Content Include="Resources\images\travel\blog_16.jpg" />
+    <Content Include="Resources\images\user-avatar.jpg" />
+    <Content Include="Resources\js\bootstrap.min.html" />
+    <Content Include="Resources\js\chart.js" />
+    <Content Include="Resources\js\counterup.min.js" />
+    <Content Include="Resources\js\custom-nav.js" />
+    <Content Include="Resources\js\custom.timer.js" />
+    <Content Include="Resources\js\dashboard-custom.js" />
+    <Content Include="Resources\js\jpanelmenu.min.js" />
+    <Content Include="Resources\js\jquery-3.2.1.min.js" />
+    <Content Include="Resources\js\jquery.countdown.min.js" />
+    <Content Include="Resources\js\main.js" />
+    <Content Include="Resources\js\map.js" />
+    <Content Include="Resources\js\plugin.js" />
+    <Content Include="Resources\js\preloader.html" />
+    <Content Include="Web.config" />
+    <Content Include="Default.aspx" />
+    <Content Include="ChiTietBaiViet.aspx" />
+    <Content Include="Tags.aspx" />
+    <Content Include="Admin\TrangChu.aspx" />
+    <Content Include="Admin\HinhAnh\Index.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App.Master.cs">
+      <DependentUpon>App.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App.Master.designer.cs">
+      <DependentUpon>App.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\serviceDanhMuc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\serviceDiaDiem\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\serviceHinhAnh\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietBaiViet.aspx.cs">
+      <DependentUpon>ChiTietBaiViet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietBaiViet.aspx.designer.cs">
+      <DependentUpon>ChiTietBaiViet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tags.aspx.cs">
+      <DependentUpon>Tags.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tags.aspx.designer.cs">
+      <DependentUpon>Tags.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TrangChu.aspx.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TrangChu.aspx.designer.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HinhAnh\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HinhAnh\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\BaseUIPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DiaDiem\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DiaDiem\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DiaDiem\Create.aspx.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DiaDiem\Create.aspx.designer.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DiaDiem\DanhSachDiaDiem.aspx.cs">
+      <DependentUpon>DanhSachDiaDiem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DiaDiem\DanhSachDiaDiem.aspx.designer.cs">
+      <DependentUpon>DanhSachDiaDiem.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.Master" />
+    <Content Include="Admin.Master" />
+    <None Include="Connected Services\serviceHinhAnh\HinhAnhService.wsdl" />
+    <None Include="packages.config" />
+    <Content Include="Resources\fonts\fontawesome-webfont93e393e3.eot" />
+    <Content Include="Resources\fonts\fontawesome-webfont93e393e3.html.readme" />
+    <Content Include="Resources\fonts\fontawesome-webfont93e393e3.ttf" />
+    <Content Include="Resources\fonts\fontawesome-webfont93e393e3.woff" />
+    <Content Include="Resources\fonts\fontawesome-webfontd41dd41d.eot" />
+    <Content Include="Resources\fonts\iconsmindca27.eot" />
+    <Content Include="Resources\fonts\iconsmindca27.ttf" />
+    <Content Include="Resources\fonts\iconsmindca27.woff" />
+    <Content Include="Resources\fonts\iconsmindd41d.eot" />
+    <Content Include="Resources\fonts\Simple-Line-Iconsc05f.ttf" />
+    <Content Include="Resources\fonts\Simple-Line-Iconsc05f.woff" />
+    <Content Include="Resources\admin\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="Resources\admin\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="Resources\admin\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="Resources\admin\fonts\fontawesome-webfontd41d.eot" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\admin\plugins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\serviceDanhMuc\" />
+    <WCFMetadataStorage Include="Connected Services\serviceDiaDiem\" />
+    <WCFMetadataStorage Include="Connected Services\serviceHinhAnh\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49481</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49481/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
