@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="index">
+        <s:complexType />
+      </s:element>
+      <s:element name="indexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="indexResult" type="tns:JsonResponseOfListOfBinhLuan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="JsonResponseOfListOfBinhLuan">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Error" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfBinhLuan" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBinhLuan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BinhLuan" nillable="true" type="tns:BinhLuan" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BinhLuan">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaiKhoanId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DiaDiemId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoiDung" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NgayBinhLuan" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="BinhLuanNoiBat" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TrangThai" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiaDiem" type="tns:DiaDiem" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaiKhoan" type="tns:TaiKhoan" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DiaDiem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DanhMucId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="HinhAnh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenDiaDiem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MoTa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoiDung" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiaChi" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NguoiTao" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LuotXem" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LaNoiBat" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrangThai" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NgayTao" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Iframe" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NgonNgu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DanhMuc" type="tns:DanhMuc" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaiKhoan" type="tns:TaiKhoan" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DanhMuc">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenDanhMuc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MoTa" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NgayTao" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TrangThai" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TaiKhoan">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenDangNhap" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MatKhau" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HoTen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SoDienThoai" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Role" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="store">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DiaDiemId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TaiKhoanId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NoiDung" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="storeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="storeResult" type="tns:JsonResponseOfBoolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="JsonResponseOfBoolean">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Error" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Data" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="approve">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BinhLuanId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="approveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="approveResult" type="tns:JsonResponseOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="JsonResponseOfString">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Error" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="findByDiaDiem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DiaDiemId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findByDiaDiemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findByDiaDiemResult" type="tns:JsonResponseOfListOfBinhLuan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BinhLuanId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteResult" type="tns:JsonResponseOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="indexSoapIn">
+    <wsdl:part name="parameters" element="tns:index" />
+  </wsdl:message>
+  <wsdl:message name="indexSoapOut">
+    <wsdl:part name="parameters" element="tns:indexResponse" />
+  </wsdl:message>
+  <wsdl:message name="storeSoapIn">
+    <wsdl:part name="parameters" element="tns:store" />
+  </wsdl:message>
+  <wsdl:message name="storeSoapOut">
+    <wsdl:part name="parameters" element="tns:storeResponse" />
+  </wsdl:message>
+  <wsdl:message name="approveSoapIn">
+    <wsdl:part name="parameters" element="tns:approve" />
+  </wsdl:message>
+  <wsdl:message name="approveSoapOut">
+    <wsdl:part name="parameters" element="tns:approveResponse" />
+  </wsdl:message>
+  <wsdl:message name="findByDiaDiemSoapIn">
+    <wsdl:part name="parameters" element="tns:findByDiaDiem" />
+  </wsdl:message>
+  <wsdl:message name="findByDiaDiemSoapOut">
+    <wsdl:part name="parameters" element="tns:findByDiaDiemResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapIn">
+    <wsdl:part name="parameters" element="tns:delete" />
+  </wsdl:message>
+  <wsdl:message name="deleteSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BinhLuanServiceSoap">
+    <wsdl:operation name="index">
+      <wsdl:input message="tns:indexSoapIn" />
+      <wsdl:output message="tns:indexSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="store">
+      <wsdl:input message="tns:storeSoapIn" />
+      <wsdl:output message="tns:storeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="approve">
+      <wsdl:input message="tns:approveSoapIn" />
+      <wsdl:output message="tns:approveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findByDiaDiem">
+      <wsdl:input message="tns:findByDiaDiemSoapIn" />
+      <wsdl:output message="tns:findByDiaDiemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <wsdl:input message="tns:deleteSoapIn" />
+      <wsdl:output message="tns:deleteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BinhLuanServiceSoap" type="tns:BinhLuanServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="index">
+      <soap:operation soapAction="http://tempuri.org/index" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="store">
+      <soap:operation soapAction="http://tempuri.org/store" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approve">
+      <soap:operation soapAction="http://tempuri.org/approve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findByDiaDiem">
+      <soap:operation soapAction="http://tempuri.org/findByDiaDiem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap:operation soapAction="http://tempuri.org/delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BinhLuanServiceSoap12" type="tns:BinhLuanServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="index">
+      <soap12:operation soapAction="http://tempuri.org/index" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="store">
+      <soap12:operation soapAction="http://tempuri.org/store" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approve">
+      <soap12:operation soapAction="http://tempuri.org/approve" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findByDiaDiem">
+      <soap12:operation soapAction="http://tempuri.org/findByDiaDiem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://tempuri.org/delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BinhLuanService">
+    <wsdl:port name="BinhLuanServiceSoap" binding="tns:BinhLuanServiceSoap">
+      <soap:address location="http://localhost:49219/Services/BinhLuanService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BinhLuanServiceSoap12" binding="tns:BinhLuanServiceSoap12">
+      <soap12:address location="http://localhost:49219/Services/BinhLuanService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

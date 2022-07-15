@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="gopys">
+        <s:complexType />
+      </s:element>
+      <s:element name="gopysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gopysResult" type="tns:JsonResponseOfListOfGopY" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="JsonResponseOfListOfGopY">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Error" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfGopY" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGopY">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GopY" nillable="true" type="tns:GopY" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GopY">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="HoTen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoiDung" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NgayLap" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GopY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HoTen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NoiDung" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NgayLap" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GopYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GopYResult" type="tns:JsonResponseOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="JsonResponseOfString">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Error" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="phanHoi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NoiDung" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="phanHoiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phanHoiResult" type="tns:JsonResponseOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="gopysSoapIn">
+    <wsdl:part name="parameters" element="tns:gopys" />
+  </wsdl:message>
+  <wsdl:message name="gopysSoapOut">
+    <wsdl:part name="parameters" element="tns:gopysResponse" />
+  </wsdl:message>
+  <wsdl:message name="GopYSoapIn">
+    <wsdl:part name="parameters" element="tns:GopY" />
+  </wsdl:message>
+  <wsdl:message name="GopYSoapOut">
+    <wsdl:part name="parameters" element="tns:GopYResponse" />
+  </wsdl:message>
+  <wsdl:message name="phanHoiSoapIn">
+    <wsdl:part name="parameters" element="tns:phanHoi" />
+  </wsdl:message>
+  <wsdl:message name="phanHoiSoapOut">
+    <wsdl:part name="parameters" element="tns:phanHoiResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HelperServiceSoap">
+    <wsdl:operation name="gopys">
+      <wsdl:input message="tns:gopysSoapIn" />
+      <wsdl:output message="tns:gopysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GopY">
+      <wsdl:input message="tns:GopYSoapIn" />
+      <wsdl:output message="tns:GopYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="phanHoi">
+      <wsdl:input message="tns:phanHoiSoapIn" />
+      <wsdl:output message="tns:phanHoiSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelperServiceSoap" type="tns:HelperServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="gopys">
+      <soap:operation soapAction="http://tempuri.org/gopys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GopY">
+      <soap:operation soapAction="http://tempuri.org/GopY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="phanHoi">
+      <soap:operation soapAction="http://tempuri.org/phanHoi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HelperServiceSoap12" type="tns:HelperServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="gopys">
+      <soap12:operation soapAction="http://tempuri.org/gopys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GopY">
+      <soap12:operation soapAction="http://tempuri.org/GopY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="phanHoi">
+      <soap12:operation soapAction="http://tempuri.org/phanHoi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelperService">
+    <wsdl:port name="HelperServiceSoap" binding="tns:HelperServiceSoap">
+      <soap:address location="http://localhost:49219/Services/HelperService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HelperServiceSoap12" binding="tns:HelperServiceSoap12">
+      <soap12:address location="http://localhost:49219/Services/HelperService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

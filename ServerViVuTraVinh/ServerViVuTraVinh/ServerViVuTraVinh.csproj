@@ -45,6 +45,24 @@
   <ItemGroup>
     <Reference Include="Devart.Data.Linq, Version=4.9.2281.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="Devart.Data.SqlServer.Linq, Version=4.9.2281.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Google.Apis, Version=1.57.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.57.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.57.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.57.0\lib\net461\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.57.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.57.0\lib\net461\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.57.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.57.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Drive.v3, Version=1.57.0.2746, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Drive.v3.1.57.0.2746\lib\net45\Google.Apis.Drive.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.57.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.57.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
     <Reference Include="GroupDocs.Watermark, Version=21.3.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <HintPath>..\packages\GroupDocs.Watermark.21.3.0\lib\net20\GroupDocs.Watermark.dll</HintPath>
     </Reference>
@@ -53,6 +71,7 @@
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -91,9 +110,13 @@
     <Content Include="Resources\Upload\Du-lich-tra-vinh-15-min-750x472.jpg" />
     <Content Include="Resources\Upload\huynh-kha-1.png" />
     <Content Include="Resources\Upload\rung-duoc-1.png" />
+    <Content Include="Services\BinhLuanService.asmx" />
     <Content Include="Services\DanhMucService.asmx" />
     <Content Include="Services\DiaDiemService.asmx" />
+    <Content Include="Services\HelperService.asmx" />
     <Content Include="Services\HinhAnhService.asmx" />
+    <Content Include="Services\SliderService.asmx" />
+    <Content Include="Services\SoLuongTruyCapService.asmx" />
     <Content Include="Services\TagService.asmx" />
     <Content Include="Services\TaiKhoan.asmx" />
     <Content Include="Web.config" />
@@ -104,10 +127,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBViVuTraVinh.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Enums\GDriveFileRole.cs" />
+    <Compile Include="Enums\GDriveFileType.cs" />
+    <Compile Include="Helpers\Config.cs" />
+    <Compile Include="Helpers\GDriveApiV3NativeWrapper.cs" />
+    <Compile Include="Helpers\GDriveFile.cs" />
+    <Compile Include="Helpers\GDriveTokenInfo.cs" />
+    <Compile Include="Helpers\GoogleDrive.cs" />
     <Compile Include="Helpers\Hash.cs" />
     <Compile Include="Helpers\JsonResponse.cs" />
+    <Compile Include="Interfaces\IGDriveApiV3Wrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BaseService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\BinhLuanService.asmx.cs">
+      <DependentUpon>BinhLuanService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Services\DanhMucService.asmx.cs">
@@ -118,8 +153,20 @@
       <DependentUpon>DiaDiemService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Services\HelperService.asmx.cs">
+      <DependentUpon>HelperService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Services\HinhAnhService.asmx.cs">
       <DependentUpon>HinhAnhService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\SliderService.asmx.cs">
+      <DependentUpon>SliderService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\SoLuongTruyCapService.asmx.cs">
+      <DependentUpon>SoLuongTruyCapService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Services\TagService.asmx.cs">

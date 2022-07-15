@@ -103,19 +103,17 @@
                                 <a href="/Admin/HinhAnh/Index.aspx"><i class="fa fa-image"></i> <span>Hình ảnh</span></a>
                             </li> 
                             <li class="active">
-                                <a href="#"><i class="fa fa-comment"></i> <span>Bình luận</span></a>
+                                <a href="/Admin/BinhLuan/Index.aspx"><i class="fa fa-comment"></i> <span>Bình luận</span></a>
                             </li> 
                             <li class="active">
-                                <a href="#"><i class="fa fa-envelope"></i> <span>Góp ý</span></a>
+                                <a href="/Admin/GopY/Index.aspx"><i class="fa fa-envelope"></i> <span>Góp ý</span></a>
                             </li> 
-						    <li class="submenu">
-							    <a href="#"><i class="fa fa-user"></i> <span> Bài viết </span> <span class="menu-arrow"></span></a>
-							    <ul style="display: none;">
-								    <li><a href="#">Danh sách bài</a></li>
-								    <li><a href="#">Danh mục</a></li>
-								    <li><a href="#">Tag</a></li> 
-							    </ul>
-						    </li> 
+                            <li class="active">
+                                <a href="/Admin/DiaDiem/Index.aspx"><i class="fa fa-sticky-note-o"></i> <span>Bài viết</span></a>
+                            </li> 
+                            <li class="active">
+                                <a href="/Admin/DanhMuc/Index.aspx"><i class="fa fa-list-alt"></i> <span>Danh mục</span></a>
+                            </li>  
                         </ul>
                     </div>
                 </div>

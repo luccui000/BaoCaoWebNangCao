@@ -66,6 +66,16 @@
           <s:element minOccurs="1" maxOccurs="1" name="Status" nillable="true" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="get3DiaDiem">
+        <s:complexType />
+      </s:element>
+      <s:element name="get3DiaDiemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get3DiaDiemResult" type="tns:JsonResponseOfListOfDiaDiem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="indexJson">
         <s:complexType />
       </s:element>
@@ -106,6 +116,28 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="show">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DiaDiemId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="showResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showResult" type="tns:JsonResponseOfDiaDiem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="JsonResponseOfDiaDiem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Error" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:DiaDiem" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="update">
         <s:complexType>
           <s:sequence>
@@ -135,20 +167,6 @@
           <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
         </s:sequence>
       </s:complexType>
-      <s:element name="ThemBinhLuan">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="khachHangId" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ThemBinhLuanResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ThemBinhLuanResult" type="tns:JsonResponseOfBoolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="delete">
         <s:complexType>
           <s:sequence>
@@ -163,6 +181,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="truycap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="truycapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="truycapResult" type="tns:JsonResponseOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="indexSoapIn">
@@ -170,6 +202,12 @@
   </wsdl:message>
   <wsdl:message name="indexSoapOut">
     <wsdl:part name="parameters" element="tns:indexResponse" />
+  </wsdl:message>
+  <wsdl:message name="get3DiaDiemSoapIn">
+    <wsdl:part name="parameters" element="tns:get3DiaDiem" />
+  </wsdl:message>
+  <wsdl:message name="get3DiaDiemSoapOut">
+    <wsdl:part name="parameters" element="tns:get3DiaDiemResponse" />
   </wsdl:message>
   <wsdl:message name="indexJsonSoapIn">
     <wsdl:part name="parameters" element="tns:indexJson" />
@@ -183,17 +221,17 @@
   <wsdl:message name="storeSoapOut">
     <wsdl:part name="parameters" element="tns:storeResponse" />
   </wsdl:message>
+  <wsdl:message name="showSoapIn">
+    <wsdl:part name="parameters" element="tns:show" />
+  </wsdl:message>
+  <wsdl:message name="showSoapOut">
+    <wsdl:part name="parameters" element="tns:showResponse" />
+  </wsdl:message>
   <wsdl:message name="updateSoapIn">
     <wsdl:part name="parameters" element="tns:update" />
   </wsdl:message>
   <wsdl:message name="updateSoapOut">
     <wsdl:part name="parameters" element="tns:updateResponse" />
-  </wsdl:message>
-  <wsdl:message name="ThemBinhLuanSoapIn">
-    <wsdl:part name="parameters" element="tns:ThemBinhLuan" />
-  </wsdl:message>
-  <wsdl:message name="ThemBinhLuanSoapOut">
-    <wsdl:part name="parameters" element="tns:ThemBinhLuanResponse" />
   </wsdl:message>
   <wsdl:message name="deleteSoapIn">
     <wsdl:part name="parameters" element="tns:delete" />
@@ -201,10 +239,20 @@
   <wsdl:message name="deleteSoapOut">
     <wsdl:part name="parameters" element="tns:deleteResponse" />
   </wsdl:message>
+  <wsdl:message name="truycapSoapIn">
+    <wsdl:part name="parameters" element="tns:truycap" />
+  </wsdl:message>
+  <wsdl:message name="truycapSoapOut">
+    <wsdl:part name="parameters" element="tns:truycapResponse" />
+  </wsdl:message>
   <wsdl:portType name="DiaDiemServiceSoap">
     <wsdl:operation name="index">
       <wsdl:input message="tns:indexSoapIn" />
       <wsdl:output message="tns:indexSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get3DiaDiem">
+      <wsdl:input message="tns:get3DiaDiemSoapIn" />
+      <wsdl:output message="tns:get3DiaDiemSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="indexJson">
       <wsdl:input message="tns:indexJsonSoapIn" />
@@ -214,23 +262,36 @@
       <wsdl:input message="tns:storeSoapIn" />
       <wsdl:output message="tns:storeSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="show">
+      <wsdl:input message="tns:showSoapIn" />
+      <wsdl:output message="tns:showSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="update">
       <wsdl:input message="tns:updateSoapIn" />
       <wsdl:output message="tns:updateSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="ThemBinhLuan">
-      <wsdl:input message="tns:ThemBinhLuanSoapIn" />
-      <wsdl:output message="tns:ThemBinhLuanSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="delete">
       <wsdl:input message="tns:deleteSoapIn" />
       <wsdl:output message="tns:deleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="truycap">
+      <wsdl:input message="tns:truycapSoapIn" />
+      <wsdl:output message="tns:truycapSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="DiaDiemServiceSoap" type="tns:DiaDiemServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="index">
       <soap:operation soapAction="http://tempuri.org/index" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get3DiaDiem">
+      <soap:operation soapAction="http://tempuri.org/get3DiaDiem" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -256,8 +317,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="update">
-      <soap:operation soapAction="http://tempuri.org/update" style="document" />
+    <wsdl:operation name="show">
+      <soap:operation soapAction="http://tempuri.org/show" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -265,8 +326,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ThemBinhLuan">
-      <soap:operation soapAction="http://tempuri.org/ThemBinhLuan" style="document" />
+    <wsdl:operation name="update">
+      <soap:operation soapAction="http://tempuri.org/update" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -283,11 +344,29 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="truycap">
+      <soap:operation soapAction="http://tempuri.org/truycap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="DiaDiemServiceSoap12" type="tns:DiaDiemServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="index">
       <soap12:operation soapAction="http://tempuri.org/index" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get3DiaDiem">
+      <soap12:operation soapAction="http://tempuri.org/get3DiaDiem" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -313,6 +392,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="show">
+      <soap12:operation soapAction="http://tempuri.org/show" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="update">
       <soap12:operation soapAction="http://tempuri.org/update" style="document" />
       <wsdl:input>
@@ -322,8 +410,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ThemBinhLuan">
-      <soap12:operation soapAction="http://tempuri.org/ThemBinhLuan" style="document" />
+    <wsdl:operation name="delete">
+      <soap12:operation soapAction="http://tempuri.org/delete" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -331,8 +419,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="delete">
-      <soap12:operation soapAction="http://tempuri.org/delete" style="document" />
+    <wsdl:operation name="truycap">
+      <soap12:operation soapAction="http://tempuri.org/truycap" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

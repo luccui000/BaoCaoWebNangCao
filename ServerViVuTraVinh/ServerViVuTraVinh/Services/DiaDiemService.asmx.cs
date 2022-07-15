@@ -26,6 +26,17 @@ namespace ServerViVuTraVinh.Services
             };
         }
         [WebMethod]
+        public JsonResponse<List<DiaDiem>> get3DiaDiem()
+        {
+            var diadiems = db.DiaDiems.Take(3).ToList();
+            return new JsonResponse<List<DiaDiem>>()
+            {
+                Error = false,
+                Message = "",
+                Data = diadiems
+            };
+        }
+        [WebMethod]
         public JsonResponse<String> indexJson()
         {
             var diadiems = db.DiaDiems.ToList();
@@ -82,6 +93,28 @@ namespace ServerViVuTraVinh.Services
             }
         }
         [WebMethod]
+        public JsonResponse<DiaDiem> show(int DiaDiemId)
+        {
+            var diadiem = db.DiaDiems.Single(el => el.Id == DiaDiemId);
+            if(diadiem != null)
+            {
+                return new JsonResponse<DiaDiem>()
+                {
+                    Error = false,
+                    Message = "",
+                    Data = diadiem
+                };
+            }  else
+            {
+                return new JsonResponse<DiaDiem>()
+                {
+                    Error = true,
+                    Message = "Không tìm thấy",
+                    Data = null
+                };
+            }
+        }
+        [WebMethod]
         public JsonResponse<bool> update(int Id, string HinhAnh, int DanhMucId, string DiaChi, string TenDiaDiem, int NguoiTao, string MoTa, string NgayTao)
         {
             try
@@ -116,16 +149,7 @@ namespace ServerViVuTraVinh.Services
                 };
             }
         }
-        [WebMethod]
-        public JsonResponse<bool> ThemBinhLuan(int khachHangId)
-        {
-            return new JsonResponse<bool>()
-            {
-                Error = true,
-                Message = "",
-                Data = false 
-            };
-        }
+        
         [WebMethod]
         public JsonResponse<bool> delete(int Id)
         {
@@ -152,6 +176,29 @@ namespace ServerViVuTraVinh.Services
                     StatusCode = 200
                 };
             }
+        } 
+         
+        [WebMethod]
+        public JsonResponse<String> truycap(int Id)
+        {
+            var dd = db.DiaDiems.Where(el => el.Id == Id).First();
+            if(dd == null)
+            {
+                return new JsonResponse<string>()
+                {
+                    Error = false,
+                    Message = "Khong tim tay bai viet",
+                    Data = "Khong tim tay bai viet"
+                };
+            }
+            dd.LuotXem = dd.LuotXem + 1;
+            db.SubmitChanges();
+            return new JsonResponse<string>()
+            {
+                Error = false,
+                Message = "OK",
+                Data = "ok"
+            };
         }
     }
 }

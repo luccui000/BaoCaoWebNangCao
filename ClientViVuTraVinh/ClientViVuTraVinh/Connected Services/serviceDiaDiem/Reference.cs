@@ -736,6 +736,97 @@ namespace ClientViVuTraVinh.serviceDiaDiem {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JsonResponseOfDiaDiem", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class JsonResponseOfDiaDiem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private bool ErrorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ClientViVuTraVinh.serviceDiaDiem.DiaDiem DataField;
+        
+        private int StatusCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public bool Error {
+            get {
+                return this.ErrorField;
+            }
+            set {
+                if ((this.ErrorField.Equals(value) != true)) {
+                    this.ErrorField = value;
+                    this.RaisePropertyChanged("Error");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public ClientViVuTraVinh.serviceDiaDiem.DiaDiem Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int StatusCode {
+            get {
+                return this.StatusCodeField;
+            }
+            set {
+                if ((this.StatusCodeField.Equals(value) != true)) {
+                    this.StatusCodeField = value;
+                    this.RaisePropertyChanged("StatusCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="JsonResponseOfBoolean", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class JsonResponseOfBoolean : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -835,6 +926,13 @@ namespace ClientViVuTraVinh.serviceDiaDiem {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/index", ReplyAction="*")]
         System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.indexResponse> indexAsync(ClientViVuTraVinh.serviceDiaDiem.indexRequest request);
         
+        // CODEGEN: Generating message contract since element name get3DiaDiemResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/get3DiaDiem", ReplyAction="*")]
+        ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemResponse get3DiaDiem(ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/get3DiaDiem", ReplyAction="*")]
+        System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemResponse> get3DiaDiemAsync(ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemRequest request);
+        
         // CODEGEN: Generating message contract since element name indexJsonResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/indexJson", ReplyAction="*")]
         ClientViVuTraVinh.serviceDiaDiem.indexJsonResponse indexJson(ClientViVuTraVinh.serviceDiaDiem.indexJsonRequest request);
@@ -849,6 +947,13 @@ namespace ClientViVuTraVinh.serviceDiaDiem {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/store", ReplyAction="*")]
         System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.storeResponse> storeAsync(ClientViVuTraVinh.serviceDiaDiem.storeRequest request);
         
+        // CODEGEN: Generating message contract since element name showResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/show", ReplyAction="*")]
+        ClientViVuTraVinh.serviceDiaDiem.showResponse show(ClientViVuTraVinh.serviceDiaDiem.showRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/show", ReplyAction="*")]
+        System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.showResponse> showAsync(ClientViVuTraVinh.serviceDiaDiem.showRequest request);
+        
         // CODEGEN: Generating message contract since element name HinhAnh from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/update", ReplyAction="*")]
         ClientViVuTraVinh.serviceDiaDiem.updateResponse update(ClientViVuTraVinh.serviceDiaDiem.updateRequest request);
@@ -856,19 +961,19 @@ namespace ClientViVuTraVinh.serviceDiaDiem {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/update", ReplyAction="*")]
         System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.updateResponse> updateAsync(ClientViVuTraVinh.serviceDiaDiem.updateRequest request);
         
-        // CODEGEN: Generating message contract since element name ThemBinhLuanResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ThemBinhLuan", ReplyAction="*")]
-        ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanResponse ThemBinhLuan(ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ThemBinhLuan", ReplyAction="*")]
-        System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanResponse> ThemBinhLuanAsync(ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanRequest request);
-        
         // CODEGEN: Generating message contract since element name deleteResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/delete", ReplyAction="*")]
         ClientViVuTraVinh.serviceDiaDiem.deleteResponse delete(ClientViVuTraVinh.serviceDiaDiem.deleteRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/delete", ReplyAction="*")]
         System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.deleteResponse> deleteAsync(ClientViVuTraVinh.serviceDiaDiem.deleteRequest request);
+        
+        // CODEGEN: Generating message contract since element name truycapResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/truycap", ReplyAction="*")]
+        ClientViVuTraVinh.serviceDiaDiem.truycapResponse truycap(ClientViVuTraVinh.serviceDiaDiem.truycapRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/truycap", ReplyAction="*")]
+        System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.truycapResponse> truycapAsync(ClientViVuTraVinh.serviceDiaDiem.truycapRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -929,6 +1034,67 @@ namespace ClientViVuTraVinh.serviceDiaDiem {
         
         public indexResponseBody(ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfListOfDiaDiem indexResult) {
             this.indexResult = indexResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class get3DiaDiemRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="get3DiaDiem", Namespace="http://tempuri.org/", Order=0)]
+        public ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemRequestBody Body;
+        
+        public get3DiaDiemRequest() {
+        }
+        
+        public get3DiaDiemRequest(ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class get3DiaDiemRequestBody {
+        
+        public get3DiaDiemRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class get3DiaDiemResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="get3DiaDiemResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemResponseBody Body;
+        
+        public get3DiaDiemResponse() {
+        }
+        
+        public get3DiaDiemResponse(ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class get3DiaDiemResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfListOfDiaDiem get3DiaDiemResult;
+        
+        public get3DiaDiemResponseBody() {
+        }
+        
+        public get3DiaDiemResponseBody(ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfListOfDiaDiem get3DiaDiemResult) {
+            this.get3DiaDiemResult = get3DiaDiemResult;
         }
     }
     
@@ -1097,6 +1263,74 @@ namespace ClientViVuTraVinh.serviceDiaDiem {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class showRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="show", Namespace="http://tempuri.org/", Order=0)]
+        public ClientViVuTraVinh.serviceDiaDiem.showRequestBody Body;
+        
+        public showRequest() {
+        }
+        
+        public showRequest(ClientViVuTraVinh.serviceDiaDiem.showRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class showRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int DiaDiemId;
+        
+        public showRequestBody() {
+        }
+        
+        public showRequestBody(int DiaDiemId) {
+            this.DiaDiemId = DiaDiemId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class showResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="showResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ClientViVuTraVinh.serviceDiaDiem.showResponseBody Body;
+        
+        public showResponse() {
+        }
+        
+        public showResponse(ClientViVuTraVinh.serviceDiaDiem.showResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class showResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfDiaDiem showResult;
+        
+        public showResponseBody() {
+        }
+        
+        public showResponseBody(ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfDiaDiem showResult) {
+            this.showResult = showResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class updateRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="update", Namespace="http://tempuri.org/", Order=0)]
@@ -1193,74 +1427,6 @@ namespace ClientViVuTraVinh.serviceDiaDiem {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ThemBinhLuanRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ThemBinhLuan", Namespace="http://tempuri.org/", Order=0)]
-        public ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanRequestBody Body;
-        
-        public ThemBinhLuanRequest() {
-        }
-        
-        public ThemBinhLuanRequest(ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class ThemBinhLuanRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int khachHangId;
-        
-        public ThemBinhLuanRequestBody() {
-        }
-        
-        public ThemBinhLuanRequestBody(int khachHangId) {
-            this.khachHangId = khachHangId;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ThemBinhLuanResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ThemBinhLuanResponse", Namespace="http://tempuri.org/", Order=0)]
-        public ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanResponseBody Body;
-        
-        public ThemBinhLuanResponse() {
-        }
-        
-        public ThemBinhLuanResponse(ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class ThemBinhLuanResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfBoolean ThemBinhLuanResult;
-        
-        public ThemBinhLuanResponseBody() {
-        }
-        
-        public ThemBinhLuanResponseBody(ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfBoolean ThemBinhLuanResult) {
-            this.ThemBinhLuanResult = ThemBinhLuanResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class deleteRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="delete", Namespace="http://tempuri.org/", Order=0)]
@@ -1325,6 +1491,74 @@ namespace ClientViVuTraVinh.serviceDiaDiem {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class truycapRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="truycap", Namespace="http://tempuri.org/", Order=0)]
+        public ClientViVuTraVinh.serviceDiaDiem.truycapRequestBody Body;
+        
+        public truycapRequest() {
+        }
+        
+        public truycapRequest(ClientViVuTraVinh.serviceDiaDiem.truycapRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class truycapRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int Id;
+        
+        public truycapRequestBody() {
+        }
+        
+        public truycapRequestBody(int Id) {
+            this.Id = Id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class truycapResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="truycapResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ClientViVuTraVinh.serviceDiaDiem.truycapResponseBody Body;
+        
+        public truycapResponse() {
+        }
+        
+        public truycapResponse(ClientViVuTraVinh.serviceDiaDiem.truycapResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class truycapResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfString truycapResult;
+        
+        public truycapResponseBody() {
+        }
+        
+        public truycapResponseBody(ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfString truycapResult) {
+            this.truycapResult = truycapResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface DiaDiemServiceSoapChannel : ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -1373,6 +1607,29 @@ namespace ClientViVuTraVinh.serviceDiaDiem {
             ClientViVuTraVinh.serviceDiaDiem.indexRequest inValue = new ClientViVuTraVinh.serviceDiaDiem.indexRequest();
             inValue.Body = new ClientViVuTraVinh.serviceDiaDiem.indexRequestBody();
             return ((ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap)(this)).indexAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemResponse ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap.get3DiaDiem(ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemRequest request) {
+            return base.Channel.get3DiaDiem(request);
+        }
+        
+        public ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfListOfDiaDiem get3DiaDiem() {
+            ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemRequest inValue = new ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemRequest();
+            inValue.Body = new ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemRequestBody();
+            ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemResponse retVal = ((ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap)(this)).get3DiaDiem(inValue);
+            return retVal.Body.get3DiaDiemResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemResponse> ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap.get3DiaDiemAsync(ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemRequest request) {
+            return base.Channel.get3DiaDiemAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemResponse> get3DiaDiemAsync() {
+            ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemRequest inValue = new ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemRequest();
+            inValue.Body = new ClientViVuTraVinh.serviceDiaDiem.get3DiaDiemRequestBody();
+            return ((ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap)(this)).get3DiaDiemAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1440,6 +1697,31 @@ namespace ClientViVuTraVinh.serviceDiaDiem {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ClientViVuTraVinh.serviceDiaDiem.showResponse ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap.show(ClientViVuTraVinh.serviceDiaDiem.showRequest request) {
+            return base.Channel.show(request);
+        }
+        
+        public ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfDiaDiem show(int DiaDiemId) {
+            ClientViVuTraVinh.serviceDiaDiem.showRequest inValue = new ClientViVuTraVinh.serviceDiaDiem.showRequest();
+            inValue.Body = new ClientViVuTraVinh.serviceDiaDiem.showRequestBody();
+            inValue.Body.DiaDiemId = DiaDiemId;
+            ClientViVuTraVinh.serviceDiaDiem.showResponse retVal = ((ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap)(this)).show(inValue);
+            return retVal.Body.showResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.showResponse> ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap.showAsync(ClientViVuTraVinh.serviceDiaDiem.showRequest request) {
+            return base.Channel.showAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.showResponse> showAsync(int DiaDiemId) {
+            ClientViVuTraVinh.serviceDiaDiem.showRequest inValue = new ClientViVuTraVinh.serviceDiaDiem.showRequest();
+            inValue.Body = new ClientViVuTraVinh.serviceDiaDiem.showRequestBody();
+            inValue.Body.DiaDiemId = DiaDiemId;
+            return ((ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap)(this)).showAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ClientViVuTraVinh.serviceDiaDiem.updateResponse ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap.update(ClientViVuTraVinh.serviceDiaDiem.updateRequest request) {
             return base.Channel.update(request);
         }
@@ -1479,31 +1761,6 @@ namespace ClientViVuTraVinh.serviceDiaDiem {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanResponse ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap.ThemBinhLuan(ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanRequest request) {
-            return base.Channel.ThemBinhLuan(request);
-        }
-        
-        public ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfBoolean ThemBinhLuan(int khachHangId) {
-            ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanRequest inValue = new ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanRequest();
-            inValue.Body = new ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanRequestBody();
-            inValue.Body.khachHangId = khachHangId;
-            ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanResponse retVal = ((ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap)(this)).ThemBinhLuan(inValue);
-            return retVal.Body.ThemBinhLuanResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanResponse> ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap.ThemBinhLuanAsync(ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanRequest request) {
-            return base.Channel.ThemBinhLuanAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanResponse> ThemBinhLuanAsync(int khachHangId) {
-            ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanRequest inValue = new ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanRequest();
-            inValue.Body = new ClientViVuTraVinh.serviceDiaDiem.ThemBinhLuanRequestBody();
-            inValue.Body.khachHangId = khachHangId;
-            return ((ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap)(this)).ThemBinhLuanAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ClientViVuTraVinh.serviceDiaDiem.deleteResponse ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap.delete(ClientViVuTraVinh.serviceDiaDiem.deleteRequest request) {
             return base.Channel.delete(request);
         }
@@ -1526,6 +1783,31 @@ namespace ClientViVuTraVinh.serviceDiaDiem {
             inValue.Body = new ClientViVuTraVinh.serviceDiaDiem.deleteRequestBody();
             inValue.Body.Id = Id;
             return ((ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap)(this)).deleteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ClientViVuTraVinh.serviceDiaDiem.truycapResponse ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap.truycap(ClientViVuTraVinh.serviceDiaDiem.truycapRequest request) {
+            return base.Channel.truycap(request);
+        }
+        
+        public ClientViVuTraVinh.serviceDiaDiem.JsonResponseOfString truycap(int Id) {
+            ClientViVuTraVinh.serviceDiaDiem.truycapRequest inValue = new ClientViVuTraVinh.serviceDiaDiem.truycapRequest();
+            inValue.Body = new ClientViVuTraVinh.serviceDiaDiem.truycapRequestBody();
+            inValue.Body.Id = Id;
+            ClientViVuTraVinh.serviceDiaDiem.truycapResponse retVal = ((ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap)(this)).truycap(inValue);
+            return retVal.Body.truycapResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.truycapResponse> ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap.truycapAsync(ClientViVuTraVinh.serviceDiaDiem.truycapRequest request) {
+            return base.Channel.truycapAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ClientViVuTraVinh.serviceDiaDiem.truycapResponse> truycapAsync(int Id) {
+            ClientViVuTraVinh.serviceDiaDiem.truycapRequest inValue = new ClientViVuTraVinh.serviceDiaDiem.truycapRequest();
+            inValue.Body = new ClientViVuTraVinh.serviceDiaDiem.truycapRequestBody();
+            inValue.Body.Id = Id;
+            return ((ClientViVuTraVinh.serviceDiaDiem.DiaDiemServiceSoap)(this)).truycapAsync(inValue);
         }
     }
 }
